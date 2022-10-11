@@ -1,0 +1,15 @@
+.toolbar {
+    -webkit-app-region: drag;
+}
+
+#gone {
+    display: none;
+}
+
+.show {
+    display: block !important;
+}
+
+.main {
+    display: none;
+}

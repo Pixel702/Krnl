@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="/lib/fontawesome.js" crossorigin="anonymous"></script>
+    <script src="/lib/jquery.min.js"></script>
+
+    <link rel="stylesheet" href="/css/context.css">
+    <link rel="stylesheet" href="/css/styles.css">
+
+    <title>Krnl</title>
+</head>
+
+<body>
+    <empty id="gone" class="w-8 h-8 inline-flex items-center justify-center text-green-500 ml-auto ring-blue-200 bg-white p-3 w-full flex flex-col rounded-md dark:bg-gray-800 shadow flex xl:flex-row flex-col items-center font-medium text-gray-900 dark:text-white pb-2 mb-2 xl:border-b border-gray-200 border-opacity-75 dark:border-gray-700 w-full flex items-center w-full text-xs py-1 px-2 leading-none dark:bg-gray-900 bg-blue-100 text-red-500 rounded-md sm:p-3 py-2 px-1 border-b border-gray-200 dark:border-gray-800"></empty>
+    <div class="bg-gray-100 dark:bg-gray-900 dark:text-white text-gray-600 h-screen flex overflow-hidden text-sm">
+        <div
+            class="bg-white dark:bg-gray-900 dark:border-gray-800 w-20 flex-shrink-0 border-r border-gray-200 flex-col hidden sm:flex">
+            <div class="flex mx-auto flex-grow mt-4 flex-col text-gray-400 space-y-4">
+                <button class="h-10 w-12 dark:bg-gray-700 dark:text-white rounded-md flex items-center justify-center">
+                    <i class="fa-solid fa-home"></i>
+                </button>
+                <button class="h-10 w-12 dark:text-gray-500 rounded-md flex items-center justify-center">
+                    <i class="fa-solid fa-gear"></i>
+                </button>
+            </div>
+        </div>
+        <div class="flex-grow overflow-hidden h-full flex flex-col">
+            <div class="toolbar h-16 lg:flex w-full border-b border-gray-200 dark:border-gray-800 hidden px-10">
+                <div class="flex h-full text-gray-600 dark:text-gray-400">
+                    <a href="#"
+                        class="cursor-pointer h-full border-b-2 border-blue-500 text-blue-500 dark:text-white dark:border-white inline-flex mr-8 items-center">Rats</a>
+                </div>
+            </div>
+            <div class="flex-grow flex overflow-x-hidden">
+                <div
+                    class="xl:w-72 w-48 flex-shrink-0 border-r border-gray-200 dark:border-gray-800 h-full overflow-y-auto lg:block hidden p-5">
+                    <div class="text-xs text-gray-400 tracking-wider">RATS - <span id="total_rats">0</span></div>
+                    <div class="relative mt-2">
+                        <input type="text"
+                            class="pl-8 h-9 bg-transparent border border-gray-300 dark:border-gray-700 dark:text-white w-full rounded-md text-sm"
+                            placeholder="Search" />
+                        <a href="#"
+                            class="w-4 absolute text-gray-400 top-1/2 transform translate-x-0.5 -translate-y-1/2 left-2 ">
+                            <i class="fa-solid fa-search"></i>
+                        </a>
+                    </div>
+                    <div id="boxes" class="space-y-4 mt-3">
+                        
+                    </div>
+                </div>
+                <div class="flex-grow bg-white dark:bg-gray-900 overflow-y-auto">
+                    <div
+                        class="sm:px-7 sm:pt-7 px-4 pt-4 flex flex-col w-full border-b border-gray-200 bg-white dark:bg-gray-900 dark:text-white dark:border-gray-800 sticky top-0">
+                        <div class="flex w-full items-center">
+                            <div id="current_rat" class="flex items-center text-3xl text-gray-900 dark:text-white">
+
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-3 sm:mt-7 mt-4">
+                            <a href="#"
+                                class="px-3 border-b-2 border-blue-500 text-blue-500 dark:text-white dark:border-white pb-1.5">Tasks</a>
+                            <a href="#"
+                                class="px-3 border-b-2 border-transparent text-gray-600 dark:text-gray-400 pb-1.5">Shell</a>
+                        </div>
+                    </div>
+                    <div id="main" class="main sm:p-7 p-4">
+                        <div class="flex w-full items-center mb-7">
+                            <button
+                                class="inline-flex mr-3 items-center h-8 pl-2.5 pr-2 rounded-md shadow text-gray-700 dark:text-gray-400 dark:border-gray-800 border border-gray-200 leading-none py-0">
+                                Ping
+                            </button>
+                        </div>
+                        <table class="w-full text-left">
+                            <thead>
+                                <tr class="text-gray-400">
+                                    <th
+                                        class="font-normal px-3 pt-0 pb-3 border-b border-gray-200 dark:border-gray-800">
+                                        Name</th>
+                                    <th
+                                        class="font-normal px-3 pt-0 pb-3 border-b border-gray-200 dark:border-gray-800">
+                                        Version</th>
+                                    <th
+                                        class="font-normal px-3 pt-0 pb-3 border-b border-gray-200 dark:border-gray-800 hidden md:table-cell">
+                                        Description</th>
+                                </tr>
+                            </thead>
+
+                            <tbody id="extensions" class="text-gray-600 dark:text-gray-100"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="/js/home/main.js"></script>
+
+</html>
