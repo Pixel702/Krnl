@@ -38,7 +38,7 @@ running:
 dump
 ```
 
-the dump creates a `client.js` which is already in the project directory.
+the dump creates a `client.js` that the victim then needs to run.
 
 run that file whilst the server is running and the rat will be
 connected.
