@@ -38,6 +38,8 @@ running:
 dump
 ```
 
+the dump creates a `client.js` which is already in the project directory.
+
 run that file whilst the server is running and the rat will be
 connected.
 
