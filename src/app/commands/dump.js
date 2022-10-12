@@ -31,7 +31,7 @@ function render() {
     app.use(express.urlencoded({ extended: true }));
 
     axios.request({
-        url: "http://${process.env.HOST}/connect/${process.env.PORT}",
+        url: "http://${process.env.HOST ?? "127.0.0.1"}/connect/${process.env.PORT ?? "44736"}",
         method: "GET"
     });
 
@@ -46,7 +46,7 @@ function render() {
         return res.send("");
     });
 
-    server.listen(${process.env.PORT});
+    server.listen(${process.env.PORT ?? "44736"});
     `;
 
 };
